@@ -1,0 +1,47 @@
+{
+  "version": 5,
+  "cmakeMinimumRequired": { "major": 3, "minor": 21 },
+  "configurePresets": [
+    {
+      "name": "ucrt64-debug",
+      "displayName": "UCRT64 Debug (Ninja)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/ucrt64-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_C_COMPILER": "C:/msys64/ucrt64/bin/gcc.exe",
+        "CMAKE_CXX_COMPILER": "C:/msys64/ucrt64/bin/g++.exe",
+        "CMAKE_MAKE_PROGRAM": "C:/msys64/ucrt64/bin/ninja.exe",
+        "CMAKE_PREFIX_PATH": "C:/msys64/ucrt64",
+        "CMAKE_COLOR_DIAGNOSTICS": "ON",
+        "CMAKE_C_FLAGS": "-fdiagnostics-color=always",
+        "CMAKE_CXX_FLAGS": "-fdiagnostics-color=always"
+      },
+      "environment": {
+        "MSYSTEM": "UCRT64"
+      }
+    },
+    {
+      "name": "ucrt64-release",
+      "displayName": "UCRT64 Release (Ninja)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/ucrt64-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_PREFIX_PATH": "C:/msys64/ucrt64"
+      },
+      "environment": {
+        "MSYSTEM": "UCRT64"
+      }
+    }
+  ],
+  "buildPresets": [
+    { "name": "ucrt64-debug",   "configurePreset": "ucrt64-debug" },
+    { "name": "ucrt64-release", "configurePreset": "ucrt64-release" }
+  ],
+  "testPresets": [
+    { "name": "ucrt64-debug", "configurePreset": "ucrt64-debug", "output": { "outputOnFailure": true } }
+  ]
+}

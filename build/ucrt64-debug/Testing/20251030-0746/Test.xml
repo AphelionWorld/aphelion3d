@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Win32-ninja"
+	BuildStamp="20251030-0746-Experimental"
+	Name="wmapurisa-pc"
+	Generator="ctest-4.1.2"
+	CompilerName="C:/msys64/ucrt64/bin/g++.exe"
+	CompilerVersion="15.2.0"
+	OSName="Windows"
+	Hostname="wmapurisa-pc"
+	OSRelease=" Professional"
+	OSVersion=" (Build 26200)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString=""
+	VendorID="Unknown Manufacturer"
+	FamilyID="0"
+	ModelID="0"
+	ModelName=""
+	ProcessorCacheSize="0"
+	NumberOfLogicalCPU="16"
+	NumberOfPhysicalCPU="8"
+	TotalVirtualMemory="69544"
+	TotalPhysicalMemory="65448"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="3600"
+	>
+	<Testing>
+		<StartDateTime>Oct 30 10:15 South Africa Standard Time</StartDateTime>
+		<StartTestTime>1761812101</StartTestTime>
+		<TestList/>
+		<EndDateTime>Oct 30 10:15 South Africa Standard Time</EndDateTime>
+		<EndTestTime>1761812101</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

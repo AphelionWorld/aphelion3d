@@ -1,0 +1,50 @@
+[
+{
+  "directory": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -ID:/AphelionWorld/Dev/aphelion3d/src/libmath/include -ID:/AphelionWorld/Dev/aphelion3d/src/libutil/include -fdiagnostics-color=always -g -std=c++17 -fdiagnostics-color=always -o src\\libmath\\CMakeFiles\\libmath.dir\\src\\math.cpp.obj -c D:\\AphelionWorld\\Dev\\aphelion3d\\src\\libmath\\src\\math.cpp",
+  "file": "D:/AphelionWorld/Dev/aphelion3d/src/libmath/src/math.cpp",
+  "output": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/src/libmath/CMakeFiles/libmath.dir/src/math.cpp.obj"
+},
+{
+  "directory": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -ID:/AphelionWorld/Dev/aphelion3d/src/libmath/include -ID:/AphelionWorld/Dev/aphelion3d/src/libutil/include -fdiagnostics-color=always -g -std=c++17 -fdiagnostics-color=always -o src\\app\\hello\\CMakeFiles\\hello.dir\\main.cpp.obj -c D:\\AphelionWorld\\Dev\\aphelion3d\\src\\app\\hello\\main.cpp",
+  "file": "D:/AphelionWorld/Dev/aphelion3d/src/app/hello/main.cpp",
+  "output": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/src/app/hello/CMakeFiles/hello.dir/main.cpp.obj"
+},
+{
+  "directory": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DAPP_NAME=\\\"viewer\\\" -ID:/AphelionWorld/Dev/aphelion3d/src/libmath/include -ID:/AphelionWorld/Dev/aphelion3d/src/libutil/include -fdiagnostics-color=always -g -std=c++17 -fdiagnostics-color=always -o src\\app\\viewer\\CMakeFiles\\viewer.dir\\main.cpp.obj -c D:\\AphelionWorld\\Dev\\aphelion3d\\src\\app\\viewer\\main.cpp",
+  "file": "D:/AphelionWorld/Dev/aphelion3d/src/app/viewer/main.cpp",
+  "output": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/src/app/viewer/CMakeFiles/viewer.dir/main.cpp.obj"
+},
+{
+  "directory": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -ID:/AphelionWorld/Dev/aphelion3d/src/libmath/include -ID:/AphelionWorld/Dev/aphelion3d/src/libutil/include -isystem D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googletest/include -isystem D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googletest -fdiagnostics-color=always -g -std=c++17 -fdiagnostics-color=always -o tests\\CMakeFiles\\math_tests.dir\\math_tests.cpp.obj -c D:\\AphelionWorld\\Dev\\aphelion3d\\tests\\math_tests.cpp",
+  "file": "D:/AphelionWorld/Dev/aphelion3d/tests/math_tests.cpp",
+  "output": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/tests/CMakeFiles/math_tests.dir/math_tests.cpp.obj"
+},
+{
+  "directory": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -ID:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googlemock/include -ID:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googlemock -isystem D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googletest/include -isystem D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googletest -fdiagnostics-color=always -g -std=c++17 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o _deps\\googletest-build\\googlemock\\CMakeFiles\\gmock.dir\\src\\gmock-all.cc.obj -c D:\\AphelionWorld\\Dev\\aphelion3d\\build\\ucrt64-debug\\_deps\\googletest-src\\googlemock\\src\\gmock-all.cc",
+  "file": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj"
+},
+{
+  "directory": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -isystem D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googlemock/include -isystem D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googlemock -isystem D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googletest/include -isystem D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googletest -fdiagnostics-color=always -g -std=c++17 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o _deps\\googletest-build\\googlemock\\CMakeFiles\\gmock_main.dir\\src\\gmock_main.cc.obj -c D:\\AphelionWorld\\Dev\\aphelion3d\\build\\ucrt64-debug\\_deps\\googletest-src\\googlemock\\src\\gmock_main.cc",
+  "file": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj"
+},
+{
+  "directory": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -ID:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googletest/include -ID:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googletest -fdiagnostics-color=always -g -std=c++17 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o _deps\\googletest-build\\googletest\\CMakeFiles\\gtest.dir\\src\\gtest-all.cc.obj -c D:\\AphelionWorld\\Dev\\aphelion3d\\build\\ucrt64-debug\\_deps\\googletest-src\\googletest\\src\\gtest-all.cc",
+  "file": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj"
+},
+{
+  "directory": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -isystem D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googletest/include -isystem D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googletest -fdiagnostics-color=always -g -std=c++17 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o _deps\\googletest-build\\googletest\\CMakeFiles\\gtest_main.dir\\src\\gtest_main.cc.obj -c D:\\AphelionWorld\\Dev\\aphelion3d\\build\\ucrt64-debug\\_deps\\googletest-src\\googletest\\src\\gtest_main.cc",
+  "file": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "output": "D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj"
+}
+]

@@ -1,0 +1,15 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/cmake_install.cmake",
+		"D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/src/libutil/cmake_install.cmake",
+		"D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/src/libmath/cmake_install.cmake",
+		"D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/src/app/hello/cmake_install.cmake",
+		"D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/src/app/viewer/cmake_install.cmake",
+		"D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/tests/cmake_install.cmake",
+		"D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-build/cmake_install.cmake",
+		"D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-build/googlemock/cmake_install.cmake",
+		"D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-build/googletest/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

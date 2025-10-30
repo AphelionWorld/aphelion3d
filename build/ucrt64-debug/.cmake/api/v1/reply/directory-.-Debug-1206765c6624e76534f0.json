@@ -1,0 +1,91 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 32,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 46,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 52,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include/aphelion3d",
+			"paths" : 
+			[
+				{
+					"from" : "src/libmath/include",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/Aphelion3D",
+			"paths" : 
+			[
+				"build/ucrt64-debug/Aphelion3DConfig.cmake",
+				"build/ucrt64-debug/Aphelion3DConfigVersion.cmake"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/Aphelion3D",
+			"exportName" : "Aphelion3DTargets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "libutil::@5437de38c5225a47e0bb",
+					"index" : 0
+				},
+				{
+					"id" : "libmath::@2563312467537a111115",
+					"index" : 33
+				}
+			],
+			"paths" : 
+			[
+				"CMakeFiles/Export/df568dc14e83ba08ed49645ed9dc7912/Aphelion3DTargets.cmake"
+			],
+			"type" : "export"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	}
+}

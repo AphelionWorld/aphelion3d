@@ -1,0 +1,94 @@
+# ---- General ----
+# Ignore build artifacts, caches, and temporary files
+build/
+bin/
+obj/
+out/
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# ---- CMake ----
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+CTestTestfile.cmake
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+Makefile
+*.cmake
+# (Keep your top-level CMakeLists.txt!)
+!/CMakeLists.txt
+
+# ---- Ninja / Make ----
+*.ninja
+.ninja_deps
+.ninja_log
+
+# ---- Visual Studio Code ----
+.vscode/
+.vscode-test/
+.history/
+*.code-workspace
+
+# ---- Compiled objects / libs ----
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+*.out
+
+# ---- Python bindings or tools ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env/
+venv/
+.envrc
+.venv/
+
+# ---- IDE / OS files ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Logs / debug output ----
+*.stackdump
+*.core
+*.gch
+*.pch
+
+# ---- Test output ----
+test-results/
+coverage/
+*.gcda
+*.gcno
+*.gcov
+# ---- Package managers / cache ----
+node_modules/
+dist/
+.cache/
+.packages/
+
+# ---- Archives ----
+*.zip
+*.tar
+*.tar.gz
+
+*.7z
+
+# ---- Local environment overrides ----
+.env.local
+.env.development.local
+.env.production.local
+

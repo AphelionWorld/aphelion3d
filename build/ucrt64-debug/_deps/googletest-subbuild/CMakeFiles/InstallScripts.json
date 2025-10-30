@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"D:/AphelionWorld/Dev/aphelion3d/build/ucrt64-debug/_deps/googletest-subbuild/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

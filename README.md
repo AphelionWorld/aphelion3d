@@ -1,9 +1,12 @@
 # Aphelion3D – CMake + MinGW + VS Code starter
 
-## Prereqs (Windows/MinGW)
+## Prereqs (Windows/MSYS2)
 - Install MSYS2: https://www.msys2.org/
-- From MSYS2 MinGW64 shell: `pacman -S --needed mingw-w64-x86_64-toolchain mingw-w64-x86_64-cmake mingw-w64-x86_64-ninja`
-- Add `C:\msys64\mingw64\bin` to your PATH (or use the MinGW64 terminal inside VS Code).
+- From MSYS2 UCRT64 shell:
+  ```bash
+  pacman -S --needed mingw-w64-ucrt-x86_64-toolchain mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-ninja
+  pacman -S mingw-w64-ucrt-x86_64-eigen3 mingw-w64-ucrt-x86_64-pmp-library
+```
 
 ## VS Code
 - Install extensions: *C/C++* and *CMake Tools*.

@@ -16,8 +16,14 @@ option(BUILD_TESTING "Build tests" ON)
 set(APHELION3D_EXPORT_NAME "Aphelion3DTargets")
 set(APHELION3D_NAMESPACE "Aphelion3D::")
 
+# Find system libraries
+find_package(OpenMP REQUIRED)
+find_package(Eigen3 REQUIRED)
+find_package(pmp REQUIRED)
+
 add_subdirectory(src/libutil)
 add_subdirectory(src/libmath)
+add_subdirectory(src/core)
 add_subdirectory(src/app/hello)
 add_subdirectory(src/app/viewer)
 

@@ -1,0 +1,3 @@
+[submodule "src/external/earcut"]
+	path = src/external/earcut
+	url = https://github.com/mapbox/earcut.hpp.git

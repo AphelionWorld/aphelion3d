@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>3D Tiles Viewer</title>
+  <link href="https://unpkg.com/cesium/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <style>
+    html, body, #cesiumContainer { width:100%; height:100%; margin:0; padding:0; overflow:hidden; }
+  </style>
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <script src="https://unpkg.com/cesium/Build/Cesium/Cesium.js"></script>
+  <script>
+    // Optional: set an ion token if you use ion terrain/imagery (not required for local tiles)
+    // Cesium.Ion.defaultAccessToken = '...';
+
+    const viewer = new Cesium.Viewer('cesiumContainer', {
+      terrain: Cesium.Terrain.fromWorldTerrain(), // optional
+      timeline: false, animation: false
+    });
+
+    const tileset = new Cesium.Cesium3DTileset({
+      url: 'http://localhost/tileset.json'
+    });
+    viewer.scene.primitives.add(tileset);
+
+    tileset.readyPromise.then(() => {
+      viewer.zoomTo(tileset);
+      // If your tiles are in local/projected coords and you don’t see them,
+      // you may need to set a modelMatrix translation to a WGS84/ECEF position here.
+    }).catch(e => console.error(e));
+  </script>
+</body>
+</html>

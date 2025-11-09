@@ -4,6 +4,7 @@ build/
 bin/
 obj/
 out/
+src/external/
 *.log
 *.tmp
 *.bak
@@ -92,3 +93,4 @@ dist/
 .env.development.local
 .env.production.local
 
+!src/external/

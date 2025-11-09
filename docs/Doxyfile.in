@@ -1,0 +1,44 @@
+# Doxyfile configuration for Aphelion3D
+
+PROJECT_NAME           = "Aphelion3D"
+PROJECT_NUMBER         = "@PROJECT_VERSION@"
+PROJECT_BRIEF          = "3D Geometry Processing and Building Mesh Generation"
+
+OUTPUT_DIRECTORY       = @CMAKE_CURRENT_BINARY_DIR@/docs
+CREATE_SUBDIRS         = NO
+
+INPUT                  = @CMAKE_CURRENT_SOURCE_DIR@/src/core/include \
+                         @CMAKE_CURRENT_SOURCE_DIR@/src/libmath/include \
+                         @CMAKE_CURRENT_SOURCE_DIR@/src/libutil/include \
+                         @CMAKE_CURRENT_SOURCE_DIR@/README.md
+
+RECURSIVE              = YES
+FILE_PATTERNS          = *.h *.hpp *.cpp *.md
+EXTENSION_MAPPING      = h=C++ hpp=C++
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_LATEX         = NO
+
+HAVE_DOT               = NO
+CALL_GRAPH             = NO
+CALLER_GRAPH           = NO
+
+USE_MDFILE_AS_MAINPAGE = @CMAKE_CURRENT_SOURCE_DIR@/README.md
+
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = NO
+
+ALPHABETICAL_INDEX     = YES
+COLS_IN_ALPHA_INDEX    = 5
+
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX          = NO
+FULL_SIDEBAR           = NO
+
+HTML_COLORSTYLE        = LIGHT

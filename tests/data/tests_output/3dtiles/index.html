@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Barebones – Ion + Local 3D Tiles (independent)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.119/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <style>
+    html, body, #cesiumContainer { width:100%; height:100%; margin:0; padding:0; }
+  </style>
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.119/Build/Cesium/Cesium.js"></script>
+  <script type="module">
+    // --- Ion token for the terrain and their tileset
+    Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjNTZiNjMzZS1iZDgzLTRlN2EtYjY3My00OWEwODIwZWI2ZmQiLCJpZCI6MzE5NTk1LCJpYXQiOjE3NTE5NzQwNDF9.Tg6zHb3jOHNyxY0lWa1OziWpCsmNtPTgZxuoSLQxKJc";
+
+    // --- Viewer
+    const viewer = new Cesium.Viewer("cesiumContainer", {
+      //terrain: Cesium.Terrain.fromWorldTerrain(),
+      animation:false, timeline:false
+    });
+
+    //const terrain = await Cesium.CesiumTerrainProvider.fromUrl("http://127.0.0.1:5500/terrainTiles/", {
+      //requestVertexNormals: true
+    //});
+
+
+    viewer.scene.globe.depthTestAgainstTerrain = true;
+    viewer.scene.globe.maximumScreenSpaceError = 5.0
+    //viewer.terrainProvider = terrain;
+   // await terrain.readyPromise;
+
+    const initialPosition = Cesium.Cartesian3.fromDegrees(-74.01881302800248, 40.69114333714821, 753);
+    const initialOrientation = new Cesium.HeadingPitchRoll.fromDegrees(21.27879878293835, -21.34390550872461, 0.0716951918898415);
+    viewer.scene.camera.setView({
+      destination: initialPosition,
+      orientation: initialOrientation,
+      endTransform: Cesium.Matrix4.IDENTITY,
+    });
+
+    let flew = false; // track if we've already flown to a tileset
+
+  // --- HELPER: offset a tileset so its center touches terrain
+  // Robust getter for a TerrainProvider across Cesium versions
+  function getTerrainProvider(viewer) {
+    // Prefer scene-level provider if present
+    return (
+      viewer.scene?.terrainProvider ||
+      viewer.scene?.globe?.terrainProvider ||
+      viewer.terrainProvider || // some builds expose this shortcut
+      null
+    );
+  }
+
+  async function waitForTerrain(provider) {
+    // Many providers expose readyPromise; EllipsoidTerrainProvider may be instantly ready
+    if (!provider) return false;
+    if (typeof provider.ready !== "boolean" || provider.ready === false) {
+      try {
+        await (provider.readyPromise || Promise.resolve());
+      } catch (_) {
+        // ignore; we'll fallback
+      }
+    }
+    return !!provider;
+  }
+
+  // --- Replace the old helper with this:
+  async function offsetTilesetToGround(tileset, { epsilonMeters = 1.0 } = {}) {
+    await tileset.readyPromise;
+
+    // Center of the tileset
+    const centerCarto = Cesium.Cartographic.fromCartesian(tileset.boundingSphere.center);
+    const currentEllipsoidHeight = centerCarto.height || 0;
+
+    // Try terrain first
+    const provider = getTerrainProvider(viewer);
+    const hasTerrain = await waitForTerrain(provider);
+
+    let groundHeight = 0; // default to ellipsoid if no terrain
+    if (hasTerrain && provider && provider.constructor.name !== "EllipsoidTerrainProvider") {
+      try {
+        const [pt] = await Cesium.sampleTerrainMostDetailed(provider, [centerCarto]);
+        if (Number.isFinite(pt?.height)) {
+          groundHeight = pt.height;
+        } else {
+          // No sampleable terrain at this point; keep ellipsoid fallback
+          groundHeight = 0;
+        }
+      } catch {
+        // sampling failed; keep ellipsoid fallback
+        groundHeight = 0;
+      }
+    } else {
+      // No terrain (or only ellipsoid): set ground to ellipsoid (height = 0)
+      groundHeight = 0;
+    }
+
+    const heightOffset = (groundHeight - currentEllipsoidHeight) + epsilonMeters;
+    //alert(heightOffset)
+
+    const lon = centerCarto.longitude;
+    const lat = centerCarto.latitude;
+    const p0 = Cesium.Cartesian3.fromRadians(lon, lat, currentEllipsoidHeight);
+    const p1 = Cesium.Cartesian3.fromRadians(lon, lat, currentEllipsoidHeight + 10);
+    const translation = Cesium.Cartesian3.subtract(p1, p0, new Cesium.Cartesian3());
+    const T = Cesium.Matrix4.fromTranslation(translation);
+    tileset.modelMatrix = Cesium.Matrix4.multiply(T, tileset.modelMatrix, new Cesium.Matrix4());
+
+    console.log("Loading both NYC Ion tiles and local tileset.json independently. Check console for status.");
+    console.log(lon, lat, heightOffset);
+
+  }
+
+
+
+    async function loadNyc() {
+      try {
+        const nyc = await Cesium.Cesium3DTileset.fromIonAssetId(75343);
+        viewer.scene.primitives.add(nyc);
+        await nyc.readyPromise;
+        if (!flew) {
+          await viewer.flyTo(nyc, { duration: 0.0 });
+          flew = true;
+        }
+        console.log("NYC tiles ready");
+      } catch (e) {
+        console.warn("NYC tiles failed:", e);
+      }
+    }
+
+    async function loadLocal() {
+      try {
+        // local tiles served at /city_lod1Clip/tileset.json
+        const local = await Cesium.Cesium3DTileset.fromUrl("tileset.json");
+        viewer.scene.primitives.add(local);
+        await local.readyPromise;
+
+       //await offsetTilesetToGround(local, { epsilonMeters: 1.0/* + yourBiasMeters */ });
+
+        if (!flew) {
+          await viewer.flyTo(local, { duration: 0.0 });
+          flew = true;
+        }
+        console.log("Local tiles ready");
+      } catch (e) {
+        console.warn("Local tiles failed:", e);
+        alert("Could not load city_lod1Clip/tileset.json. Check path and Network tab.");
+      }
+    }
+
+    // Load both independently; failure of one won't block the other
+    Promise.allSettled([loadLocal()]);
+  </script>
+</body>
+</html>

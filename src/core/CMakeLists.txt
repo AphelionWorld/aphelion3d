@@ -1,5 +1,11 @@
-file(GLOB_RECURSE CORE_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/*.hpp")
-add_library(core SHARED ${CORE_HEADERS} src/mesh.cpp)
+file(GLOB_RECURSE CORE_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/*.h")
+add_library(core SHARED ${CORE_HEADERS} 
+  src/mesh.cpp 
+  src/utilities.cpp
+  src/algorithms.cpp
+  src/3dtiler.cpp
+  src/output_writer.cpp
+)
 add_library(Aphelion3D::core ALIAS core)
 
 target_include_directories(core PUBLIC
@@ -12,6 +18,14 @@ target_link_libraries(core PUBLIC
   Aphelion3D::libmath
   pmp
   Eigen3::Eigen
+  GDAL::GDAL
+  Boost::system
+  Boost::filesystem
+  Boost::graph
+  nlohmann_json::nlohmann_json
+  PRIVATE
+  poly2tri
+  tinygltf
 )
 
 target_compile_definitions(core PRIVATE CORE_SHARED)

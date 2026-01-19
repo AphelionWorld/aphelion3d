@@ -1,0 +1,39 @@
+{
+  "rasters": [
+    {
+      "input": "/mnt/d/Data/CDB/Project_2025_11_27_London_Maxar_stereo_london_vucity/ortho/geotiff/ortho.tif",
+      "type": "imagery",
+      "min_lod": 0,
+      "max_lod": 10,
+      "tile_size": 1024,
+      "format": "GTiff"
+    },
+    {
+      "input": "/mnt/d/Data/CDB/Project_2025_11_27_London_Maxar_stereo_london_vucity/dhm/geotiff/dhm.tif",
+      "type": "elevation",
+      "min_lod": 0,
+      "max_lod": 5,
+      "tile_size": 1024,
+      "format": "GTiff",
+      "nodata": -9999
+    }
+  ],
+  "vectors": [
+    { 
+      "input": "/mnt/d/Data/CDB/Project_2025_11_27_London_Maxar_stereo_london_vucity/building/shapefile/building.shp", 
+      "dataset": "buildings", 
+      "format": "gpkg", 
+      "min_lod": 0, 
+      "max_lod": 8 
+    }
+  ],
+  "models": [
+    {
+      "input": "/mnt/d/Data/CDB/Project_2025_11_27_London_Augmentation_Maxar_stereo_london_vucity/0/EXPORT/augmented-building/obj2",
+      "dataset": "geotypical",
+      "category": "A_Culture",
+      "subcategory": "L_Misc_Feature",
+      "feature_code": "AL015"
+    }
+  ]
+}
